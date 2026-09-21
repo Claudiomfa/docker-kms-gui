@@ -1,9 +1,9 @@
 name: "kms"
 services:
   app:
-    image: "11notes/kms:1.0.0"
+    image: "Claudiomfa/kms:1.3.1"
     environment:
-      TZ: "Europe/Zurich"
+      TZ: "Europe/Lisbon"
     volumes:
       - "var:/kms/var"
     ports:
@@ -11,13 +11,13 @@ services:
     restart: "always"
 
   gui:
-    image: "11notes/kms-gui:latest"
+    image: "Claudiomfa/kms-gui:latest"
     depends_on:
       app:
         condition: "service_healthy"
         restart: true
     environment:
-      TZ: "Europe/Zurich"
+      TZ: "Europe/Lisbon"
     volumes:
       - "var:/kms/var"
     ports:
