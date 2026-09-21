@@ -26,6 +26,7 @@
     cd /opt/py-kms
     set -- "gunicorn" \
       --log-level ${LOG_LEVEL} \
+      --workers 10 \
       pykms_WebUI:app
 
     eleven log start
